@@ -292,7 +292,7 @@ app.get('/hotels/filter/country', (req, res) => {
   if (!country) {
     return res.status(400).json({ error: 'Country is required' });
   }
-  
+
   let result = hotels.filter((hotelObj) => filterByCountry(hotelObj, country));
   res.json({ hotels: result });
 });
@@ -307,7 +307,7 @@ app.get('/hotels/filter/category', (req, res) => {
     return res.status(400).json({ error: 'Category is required' });
   }
   let result = hotels.filter((hotelObj) => filterByCategory(hotelObj, category));
-  res.json({ hotels: result });
+  res.json({ hotels });
 });
 
 // Start the server
