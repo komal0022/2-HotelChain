@@ -292,6 +292,7 @@ app.get('/hotels/filter/country', (req, res) => {
   if (!country) {
     return res.status(400).json({ error: 'Country is required' });
   }
+  
   let result = hotels.filter((hotelObj) => filterByCountry(hotelObj, country));
   res.json({ hotels: result });
 });
